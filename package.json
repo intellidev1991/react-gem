@@ -23,8 +23,8 @@
     "test:watch": "react-scripts test --env=jsdom",
     "predeploy": "cd example && yarn install && yarn run build",
     "deploy": "gh-pages -d example/build",
-    "styleguide": "styleguidist server",
-    "styleguide:build": "styleguidist build"
+    "doc": "styleguidist server",
+    "doc:build": "styleguidist build"
   },
   "peerDependencies": {
     "react": "^17.0.0"
