@@ -1,14 +1,17 @@
 /* eslint-disable */
 import React from "react";
 
-interface IUseStateSessionRaw {
-  localStorageKey: string /* key */;
-  init: any /* initializer */;
+interface IUseStateSessionRawProps {
+  /** Key */
+  key: string;
+  /** initial state value  */
+  init: any;
 }
-const useStateSessionRaw = ({ localStorageKey, init }: IUseStateSessionRaw) => {
+
+const useStateSessionRaw = ({ key, init }: IUseStateSessionRawProps) => {
   const initializer = () => {
     try {
-      let json_str = sessionStorage.getItem(localStorageKey);
+      let json_str = sessionStorage.getItem(key);
       if (json_str) {
         return JSON.parse(json_str);
       } else {
@@ -18,14 +21,14 @@ const useStateSessionRaw = ({ localStorageKey, init }: IUseStateSessionRaw) => {
       return init;
     }
   };
-  const [value, setValue] = React.useState(initializer());
+  const [_value, _setValue] = React.useState(initializer());
 
   React.useEffect(() => {
-    let json_str = JSON.stringify(value);
-    sessionStorage.setItem(localStorageKey, json_str);
-  }, [value]);
+    let json_str = JSON.stringify(_value);
+    sessionStorage.setItem(key, json_str);
+  }, [_value]);
 
-  return [value, setValue];
+  return [_value, _setValue];
 };
 
 export { useStateSessionRaw };

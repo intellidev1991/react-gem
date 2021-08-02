@@ -13,9 +13,9 @@ interface ITextProps {
   isActive: boolean;
 }
 
-const Text = React.memo(({ title, isActive }: ITextProps) => {
+const Text = React.memo(({ title, isActive, children }: ITextProps) => {
   useEffect(() => {}, []);
-  return <div>login page</div>;
+  return <div>{children}</div>;
 });
 
 //const Text = React.memo(_Text);

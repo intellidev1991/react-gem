@@ -1,7 +1,9 @@
 The example of Test Component
 
-```jsx static
+```jsx
+import { Text } from "react-gem";
+
 <Text title="large" isActive>
   Push Me
-</Text>
+</Text>;
 ```
