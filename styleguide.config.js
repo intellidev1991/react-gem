@@ -10,6 +10,8 @@ module.exports = {
   usageMode: "expand",
   exampleMode: "expand",
   version: `${version}`,
+  sortProps: (props) => props,
+  require: [path.join(__dirname, "src/docs/doc.css")],
   template: {
     head: {
       links: [
@@ -39,7 +41,15 @@ module.exports = {
     {
       name: "Hooks",
       components: "src/components/hooks/!(index).ts",
+      ignore: ["src/components/hooks/useObjectState.ts"],
       description: "Some useful Hooks ",
+      sections: [
+        {
+          name: "useObjectState",
+          content: "src/components/hooks/useObjectState.md",
+          usageMode: "hide",
+        },
+      ],
     },
     {
       name: "Components",

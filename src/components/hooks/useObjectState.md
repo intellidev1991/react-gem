@@ -1,4 +1,4 @@
-Create a state for an object with useful manipulation methods
+use this Hook in Functional-Component to update multiple states in a single line of code, Just like Class Components
 
 ```jsx
 import { useObjectState } from "react-gem";
@@ -13,6 +13,7 @@ const MyComponent = ({}) => {
   return (
     <div>
       <button
+        className="btn btn-primary"
         onClick={() => {
           //for update the specific state
           setState({ name: "Test1", flag: true });

@@ -26,9 +26,12 @@
     "doc": "styleguidist server",
     "doc:build": "styleguidist build"
   },
-  "peerDependencies": {
+  "dependencies": {
     "@types/qs": "^6.9.7",
     "qs": "^6.10.1",
+    "js-base64": "^3.6.1"
+  },
+  "peerDependencies": {
     "react": "^17.0.0"
   },
   "devDependencies": {
@@ -59,8 +62,5 @@
   },
   "files": [
     "dist"
-  ],
-  "dependencies": {
-    "js-base64": "^3.6.1"
-  }
+  ]
 }
