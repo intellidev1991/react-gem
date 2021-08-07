@@ -2,16 +2,9 @@ The Hook to store state in sessionStorage with **Base64** encoder. The value of 
 
 **The value will be stored in sessionStorage just like below:**
 
-<table>
-  <tr>
-    <th>Clear Input Text</th>
-    <th>Base64 stored Text</th>
-  </tr>
-  <tr>
-    <td>my clear text</td>
-    <td>bXkgY2xlYXIgdGV4dA==</td>
-  </tr>
-</table>
+| Clear Input Text | Base64 stored Text in sessionStorage |
+| ---------------- | ------------------------------------ |
+| my clear text    | bXkgY2xlYXIgdGV4dA==                 |
 
 **(After change refresh the page to see the result)**
 
@@ -20,7 +13,7 @@ import React, { useState, useEffect } from "react";
 import { useStateSessionBase64 } from "react-gem";
 
 const SampleBase64 = () => {
-  const KEY_STORE_B64 = "key_store_b64";
+  const KEY_STORE_B64 = "key_useStateSessionBase64";
 
   const [state, setState] = useStateSessionBase64({
     key: KEY_STORE_B64,
@@ -35,14 +28,14 @@ const SampleBase64 = () => {
   //---------------------
   return (
     <div>
-      <button onClick={() => setState(state + 1)}>Click to change session state</button>
+      <button onClick={() => setState(state + 1)}>Click to change sessionStorage state</button>
       <button
         onClick={() => {
           sessionStorage.removeItem(KEY_STORE_B64);
           setState(1);
         }}
       >
-        Remove sessionItem
+        Remove sessionStorage Item
       </button>
       <p>Current encoded value: {showEncodedData}</p>
       <p>Current decoded value: {state}</p>

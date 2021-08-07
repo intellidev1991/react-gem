@@ -7,7 +7,7 @@ import React from "react";
 import { useStateSessionRaw } from "react-gem";
 
 const SessionRaw = () => {
-  const KEY_STORE_RAW = "key_store_raw";
+  const KEY_STORE_RAW = "key_useStateSessionRaw";
 
   const [state, setState] = useStateSessionRaw({
     key: KEY_STORE_RAW,
@@ -16,14 +16,14 @@ const SessionRaw = () => {
 
   return (
     <div>
-      <button onClick={() => setState(state + 1)}>Click to change session state</button>
+      <button onClick={() => setState(state + 1)}>Click to change sessionStorage state</button>
       <button
         onClick={() => {
           sessionStorage.removeItem(KEY_STORE_RAW);
           setState(1);
         }}
       >
-        Remove sessionItem
+        Remove sessionStorage Item
       </button>
       <p>Current value: {state}</p>
     </div>
